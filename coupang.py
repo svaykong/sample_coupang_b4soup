@@ -56,7 +56,6 @@ class Coupang:
                     product_name
                     product_base_price
                     product_sell_price
-                    delivery_fee
                     total_rating
                     product_image
                 '''          
@@ -83,14 +82,7 @@ class Coupang:
                     else:
                         product_sell_price = ''
                     print(f'sell price: {product_sell_price}')
-                    
-                    delivery_fee = list.find(name='span', attrs={'class': 'badge-delivery'})
-                    if delivery_fee:
-                        delivery_fee = delivery_fee.text.strip() # Strip to remove extra spaces
-                    else:
-                        delivery_fee = ''
-                    print(f'delivery fee: {delivery_fee}')
-                    
+                     
                     total_rating = list.find(name='span', attrs={'class': 'rating-total-count'})
                     if total_rating:
                         total_rating = total_rating.text.strip() # Strip to remove extra spaces
